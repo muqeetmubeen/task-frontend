@@ -32,10 +32,10 @@ export function Login({ ...props }) {
     
     try {
       
-      const res = await axios.post('https://tasks-backend-psi.vercel.app/api/auth/login',{
-        
-        email,password
-      }, console.log("Login URL:", "https://tasks-backend-psi.vercel.app/api/auth/login"),{
+      const res = await axios.post('https://tasks-backend-psi.vercel.app/api/auth/login',
+        console.log("Login URL:", "https://tasks-backend-psi.vercel.app/api/auth/login"), 
+        {email,password
+      },{
         headers:{
           "Content-Type":"application/json"
         }
