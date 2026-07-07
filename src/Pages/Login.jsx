@@ -33,8 +33,9 @@ export function Login({ ...props }) {
     try {
       
       const res = await axios.post('https://tasks-backend-psi.vercel.app/api/auth/login',{
+        
         email,password
-      },{
+      }, console.log("Login URL:", "https://tasks-backend-psi.vercel.app/api/auth/login"),{
         headers:{
           "Content-Type":"application/json"
         }
@@ -52,6 +53,10 @@ export function Login({ ...props }) {
       console.log(error);
       
       console.error("Login Faild",error)
+  console.log("Error Response:", error.response);
+  console.log("Error Request:", error.request);
+  console.log("Error Message:", error.message);
+
     }
 
    }
