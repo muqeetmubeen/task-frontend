@@ -13,11 +13,11 @@ function Task() {
   //fetch All tasks
   const fetchAllTasks = async()=>{
    try {
-    const res =await axios.get('http://localhost:4000/api/task/getAll',{
+    const res =await axios.get('https://tasks-backend-psi.vercel.app/api/task/getAll',{
       headers:{
          "Content-Type":"application/json",
           "auth-token":token
-        }
+        }/
     })
     setTasks(res.data.tasks)
    } catch (error) {
@@ -33,7 +33,7 @@ function Task() {
    const handleAddtask =async(e)=>{
     e.preventDefault();
     try {
-        await axios.post('http://localhost:4000/api/task/create',{title,description},{
+        await axios.post('https://tasks-backend-psi.vercel.app/api/task/create',{title,description},{
       headers:{
          "Content-Type":"application/json",
           "auth-token":token
@@ -52,7 +52,7 @@ function Task() {
       const handleUpdatetask =async(e)=>{
     e.preventDefault();
     try {
-       await axios.put(`http://localhost:4000/api/task/update/${editingTask.id}`,{title,description},{
+       await axios.put(`https://tasks-backend-psi.vercel.app/api/task/update/${editingTask.id}`,{title,description},{
       headers:{
          "Content-Type":"application/json",
           "auth-token":token
@@ -71,7 +71,7 @@ function Task() {
 
     const handleDeletetask =async(id)=>{
     try {
-       await axios.delete(`http://localhost:4000/api/task/delete/${id}`,{
+       await axios.delete(`https://tasks-backend-psi.vercel.app/api/task/delete/${id}`,{
       headers:{
          "Content-Type":"application/json",
           "auth-token":token

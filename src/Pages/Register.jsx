@@ -28,7 +28,7 @@ export function RegisterForm({ ...props }) {
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://task-two-woad.vercel.app/api/auth/register',{
+      const res = await axios.post('https://tasks-backend-psi.vercel.app/api/auth/register',{
         name,email,password
       },{
         headers:{
