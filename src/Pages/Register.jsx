@@ -48,9 +48,7 @@ export function RegisterForm({ ...props }) {
     }
 
    }
-    function registerd (){
-    alert('Registerd')
-    }
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -59,7 +57,7 @@ export function RegisterForm({ ...props }) {
         <CardTitle className='text-center'>Register</CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleRegister} onSubmit={registerd} >
+        <form onSubmit={handleRegister} >
           <FieldGroup>
             <Field>
               <FieldLabel htmlFor="name"> Name</FieldLabel>
