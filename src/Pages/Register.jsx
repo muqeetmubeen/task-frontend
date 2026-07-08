@@ -22,13 +22,14 @@ export function RegisterForm({ ...props }) {
     const [email,SetEmail] = useState("")
     const [password,SetPassword] = useState("")
     const [response,SetResponse] = useState(null)
-
+   
+    const API_URL = import.meta.env.VITE_API_URL;
     
    const handleRegister = async(e) =>{
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://tasks-backend-psi.vercel.app/api/auth/register',{
+      const res = await axios.post(`${API_URL}/api/auth/register`,{
         name,email,password
       },{
         headers:{

@@ -35,7 +35,7 @@ export function Login({ ...props }) {
     
     try {
       
-      const res = await axios.post(`${API_URL}/auth/login`,{
+      const res = await axios.post(`${API_URL}/api/auth/login`,{
       email,password
       },{
         headers:{
