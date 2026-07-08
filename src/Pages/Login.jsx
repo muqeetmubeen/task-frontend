@@ -55,15 +55,9 @@ export function Login({ ...props }) {
       console.log(error);
       
       console.error("Login Faild",error)
-
-    
-  console.error("Login Error:", error);
-
-  return res.status(500).json({
-    success: false,
-    message: error.message,
-    stack: error.stack
-  });
+       console.log(error.message)
+  
+  
 }
     }
 
