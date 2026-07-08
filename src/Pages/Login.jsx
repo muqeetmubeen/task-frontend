@@ -18,11 +18,14 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
+
 export function Login({ ...props }) {
     const navigate = useNavigate();
     const [email,SetEmail] = useState("")
     const [password,SetPassword] = useState("")
     const [response,SetResponse] = useState(null)
+
+    const API_URL = import.meta.env.VITE_API_URL;
 
     
    const handlelogin = async(e) =>{
@@ -32,9 +35,8 @@ export function Login({ ...props }) {
     
     try {
       
-      const res = await axios.post('https://tasks-backend-psi.vercel.app/api/auth/login',
-        console.log("Login URL:", "https://tasks-backend-psi.vercel.app/api/auth/login"), 
-        {email,password
+      const res = await axios.post(`${API_URL}/auth/login`,{
+      email,password
       },{
         headers:{
           "Content-Type":"application/json"
@@ -53,9 +55,6 @@ export function Login({ ...props }) {
       console.log(error);
       
       console.error("Login Faild",error)
-  console.log("Error Response:", error.response);
-  console.log("Error Request:", error.request);
-  console.log("Error Message:", error.message);
 
     }
 
